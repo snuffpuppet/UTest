@@ -1,5 +1,5 @@
 # UTest
-A simple but flexible Unit Testing framework for GAS
+A simple Unit Testing framework for GAS
 
 To use this framework:
 1. Add the library UTest to your code:
