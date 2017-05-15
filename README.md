@@ -7,20 +7,21 @@ To use this framework:
 ```   
    MfVkvoq5roRM2C2Hl70BB1ZMWPiBgPoq6
 ```
-2. Create a function to contain all your unit testing. e.g.
+2. Create a function to contain all your unit testing
 ```javascript
       doTests() {
       }
  ```
-2. Create an object either inside or outside of the scope of your function who's elements are functions containing groups of tests.
-  These functions are called 'Test Suites' and allow groups of related tests to be run together. 
-  They must accept at least one parameter (more on that later) e.g.
+2. Create an object either inside or outside of the scope of your function who's elements are functions containing groups of tests.  
+  These functions are called test suites and allow groups of related tests to be run together. They must accept at least one parameter (the test manager) and can accept more if passed in later on (more on that later)
 ```javascript
       doTests() {
         var TESTS {
           testSuite1: function(t) {
           },
           testSuite2: function(t) {
+          },
+          testSuite3: function(t) {
           }
         };
       }
