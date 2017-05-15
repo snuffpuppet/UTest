@@ -29,7 +29,7 @@ To use this framework:
 3. Now we are going to set up the actual tests.
    In the test suite functions call t.expect and pass it the function you want to test followed by its expected output.  
    
-   You can also provide an optional 3rd parameter passing a comparison function that takes two values and returns a boolen. This is useful if the type returned by your function is cannot be compared with '===', the default
+   You can also provide an optional 3rd parameter passing a comparison function that takes two values and returns a boolen. This is useful if the type returned by your function cannot be compared with '===', the default
 ```javascript 
       doTests() {
         var TESTS {
