@@ -136,7 +136,7 @@ To use this framework:
           OtherLogger.log(outcome.toString());
       }
   ```
- 9. Adding this to our testing function would like like this:  
+ 9. To start using it, simply add your custom logging function as a parameter to the init function:
  ```javascript
        doTests() {
         var TESTS {
