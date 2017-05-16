@@ -48,7 +48,7 @@ To use this framework:
         };
       }
 ``` 
-4. After the TESTS variable, we will be creating our unit testing wrapper. This creates the testManager which is passed the object containing all your test suites. It also handles optional arguments that can be used to set up configuratipon for the tests in your test suite.  
+4. After the TESTS variable, we will be creating our unit testing wrapper. This creates the testManager which is passed the object containing all your test suites. It also handles optional arguments that can be used to set up configuration for the tests in your test suite.  
 
    First, lets just initialise the Unit Testing Framework
 ```javascript 
