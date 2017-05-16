@@ -1,9 +1,10 @@
 # UTest
-A simple Unit Testing framework for GAS
+A simple Unit Testing framework for GAS (Google Apps Script). GAS is a cloud based javascript platform built into Google's application suite. For more info check out this link: https://developers.google.com/apps-script/
 
 To use this framework:
 1. Add the library UTest to your code:
-   In your script file go to Resources->Libraries and copy in the following library key. Select the stable version and click Save: 
+   In your script file go to Resources->Libraries and copy in the following library key. Select the latest stable version and click Save.  
+   (Further information on adding libraries to your scripts can be found here: https://developers.google.com/apps-script/guide_libraries)
 ```   
    MfVkvoq5roRM2C2Hl70BB1ZMWPiBgPoq6
 ```
