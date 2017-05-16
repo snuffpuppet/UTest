@@ -129,16 +129,16 @@ To use this framework:
    }
    ```
    As a simple example we could just re-direct the output, but you could always store them all up to output together at a later date.
-  ```javascript
+ ```javascript
       function logger(outcome) {
         OtherLogger.log("%s: %s", outcome.suiteName, outcome.numFailed === 0 ? "PASSED" : "FAILED");
         if (outcome.numFailed > 0)
           OtherLogger.log(outcome.toString());
       }
-  ```
+ ```
  9. To start using it, simply add your custom logging function as a parameter to the init function:
  ```javascript
-       doTests() {
+      doTests() {
         var TESTS {
           testSuite1: function(t) {
             t.compare(my_function1(), expected_output1);
