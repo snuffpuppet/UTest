@@ -118,4 +118,47 @@ To use this framework:
 ``` 
   7. All test success and failure output goes to the logs which you can check under 'View->Logs'
  
+  8. If your results are getting obscured in the default Log output, or if you just want them to be handled differently, you can add in a custom logger function. It will be called with an 'outcome' object containing all the results of the current test suite.  
+   The outcome object looks like this:
+   ```javascript
+   {
+     numPassed: Number, 
+     numFailed: Number, 
+     suiteName: String, 
+     testResults[] // of testResult { passed: boolean, suiteName: String, expected: String, output: String, summary: String }
+   }
+   ```
+   As a simple example we could just re-direct the output, but you could always store them all up to output together at a later date.
+  ```javascript
+      function logger(outcome) {
+        OtherLogger.log("%s: %s", outcome.suiteName, outcome.numFailed === 0 ? "PASSED" : "FAILED");
+        if (outcome.numFailed > 0)
+          OtherLogger.log(outcome.toString());
+      }
+  ```
+ 9. Adding this to our testing function would like like this:  
+ ```javascript
+       doTests() {
+        var TESTS {
+          testSuite1: function(t) {
+            t.compare(my_function1(), expected_output1);
+            t.compare(my_function2(), expected_output2);
+          },
+          testSuite2: function(t, cfg, testSheetId) {
+            t.compare(my_function3(cfg, testSheetId), expected_output3);
+          },
+          testSuite3: function(t, cfg) {
+            t.compare(my_array_function4(cfg), expected_output4, function(a,b) { return a.equals(b); });
+          }
+        };
  
+        var UTEST = UTest.initUTest(TESTS, logger);
+ 
+        var cfg = getConfig();
+        var testSheetId = 'xxc777r_YYheh22pl78...';
+ 
+        UTEST('testSuite1');
+        UTEST('testSuite2', cfg, testSheetId);
+        UTEST('testSuite3', cfg);
+      }
+  ```
