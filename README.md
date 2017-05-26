@@ -35,14 +35,14 @@ To use this framework:
       doTests() {
         var TESTS {
           testSuite1: function(t) {
-            t.compare(my_function1(), expected_output1);
-            t.compare(my_function2(), expected_output2);
+            t.expect(my_function1(), expected_output1);
+            t.expect(my_function2(), expected_output2);
           },
           testSuite2: function(t) {
-            t.compare(my_function3(), expected_output3);
+            t.expect(my_function3(), expected_output3);
           },
           testSuite3: function(t) {
-            t.compare(my_array_function4(), expected_output4, function(a,b) { return a.equals(b); });
+            t.expect(my_array_function4(), expected_output4, function(a,b) { return a.equals(b); });
           }
 
         };
@@ -55,14 +55,14 @@ To use this framework:
       doTests() {
         var TESTS {
           testSuite1: function(t) {
-            t.compare(my_function1(), expected_output1);
-            t.compare(my_function2(), expected_output2);
+            t.expect(my_function1(), expected_output1);
+            t.expect(my_function2(), expected_output2);
           },
           testSuite2: function(t) {
-            t.compare(my_function3(), expected_output3);
+            t.expect(my_function3(), expected_output3);
           },
           testSuite3: function(t) {
-            t.compare(my_array_function4(), expected_output4, function(a,b) { return a.equals(b); });
+            t.expect(my_array_function4(), expected_output4, function(a,b) { return a.equals(b); });
           }
         };
         var UTEST = initUTest(TESTS);
@@ -73,14 +73,14 @@ To use this framework:
       doTests() {
         var TESTS {
           testSuite1: function(t) {
-            t.compare(my_function1(), expected_output1);
-            t.compare(my_function2(), expected_output2);
+            t.expect(my_function1(), expected_output1);
+            t.expect(my_function2(), expected_output2);
           },
           testSuite2: function(t) {
-            t.compare(my_function3(), expected_output3);
+            t.expect(my_function3(), expected_output3);
           },
           testSuite3: function(t) {
-            t.compare(my_array_function4(), expected_output4, function(a,b) { return a.equals(b); });
+            t.expect(my_array_function4(), expected_output4, function(a,b) { return a.equals(b); });
           }
         };
         var UTEST = initUTest(TESTS);
@@ -95,14 +95,14 @@ To use this framework:
       doTests() {
         var TESTS {
           testSuite1: function(t) {
-            t.compare(my_function1(), expected_output1);
-            t.compare(my_function2(), expected_output2);
+            t.expect(my_function1(), expected_output1);
+            t.expect(my_function2(), expected_output2);
           },
           testSuite2: function(t, cfg, testSheetId) {
-            t.compare(my_function3(cfg, testSheetId), expected_output3);
+            t.expect(my_function3(cfg, testSheetId), expected_output3);
           },
           testSuite3: function(t, cfg) {
-            t.compare(my_array_function4(cfg), expected_output4, function(a,b) { return a.equals(b); });
+            t.expect(my_array_function4(cfg), expected_output4, function(a,b) { return a.equals(b); });
           }
         };
  
@@ -141,14 +141,14 @@ To use this framework:
       doTests() {
         var TESTS {
           testSuite1: function(t) {
-            t.compare(my_function1(), expected_output1);
-            t.compare(my_function2(), expected_output2);
+            t.expect(my_function1(), expected_output1);
+            t.expect(my_function2(), expected_output2);
           },
           testSuite2: function(t, cfg, testSheetId) {
-            t.compare(my_function3(cfg, testSheetId), expected_output3);
+            t.expect(my_function3(cfg, testSheetId), expected_output3);
           },
           testSuite3: function(t, cfg) {
-            t.compare(my_array_function4(cfg), expected_output4, function(a,b) { return a.equals(b); });
+            t.expect(my_array_function4(cfg), expected_output4, function(a,b) { return a.equals(b); });
           }
         };
  
