@@ -1,6 +1,13 @@
 # UTest
 A simple Unit Testing framework for GAS (Google Apps Script). GAS is a cloud based javascript platform built into Google's application suite. For more info check out this link: https://developers.google.com/apps-script/
 
+This framework has several features that I find useful in my testing. 
+- By default all tests are run without stopping on failed ones. This allows review of all failed tests before having to re-run
+- Batching of tests into logical groups that make sense to be run together. Prhaps they share initialisation or configuration elements
+- The default '===' comparison can be overridden for any test with a function to do the comparison
+- Parameters can be passed to the test batches to allow configuration or shared resources to be used
+- The default output can be overridden. Nomrmally is uses Logger, a function can be used that will get passed the test results whcih can sent anywhere you like
+
 To use this framework:
 1. Add the library UTest to your code:
    In your script file go to Resources->Libraries and copy in the following library key. Select the latest stable version and click Save.  
