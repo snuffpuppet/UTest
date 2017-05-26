@@ -3,10 +3,10 @@ A simple Unit Testing framework for GAS (Google Apps Script). GAS is a cloud bas
 
 This framework has several features that I find useful in my testing. 
 - By default all tests are run without stopping on failed ones. This allows review of all failed tests before having to re-run
-- Batching of tests into logical groups that make sense to be run together. Prhaps they share initialisation or configuration elements
-- The default '===' comparison can be overridden for any test with a function to do the comparison
-- Parameters can be passed to the test batches to allow configuration or shared resources to be used
-- The default output can be overridden. Nomrmally is uses Logger, a function can be used that will get passed the test results whcih can sent anywhere you like
+- Batching of tests into logical groups that make sense to be run together
+- The default '===' comparison can be overridden on a per test basis
+- Parameters can be passed to the test batches to allow shared configuration or resources to be used
+- The test output normally goes to the logs but the detsination can be overriden with a custom function
 
 To use this framework:
 1. Add the library UTest to your code:
