@@ -25,9 +25,18 @@ function getTestManager_(suiteName) {
   var that = {};
   var outcome = { numPassed:0, numFailed: 0, suiteName: suiteName, testResults: [] };
   
+  var expect = function(output, expected, evaluator) {
+    if (typeof(expected) === "string" && typeof(evaluator) !== "function") {
+      return expectString(typeof(output) === "string" ? output : JSON.stringify(output), expected);
+    }
+    else {
+      return expectVerbatim(output, expected, evaluator);
+    }
+  };
+  
   // compare test output and expected output with either '===' or optional evaluator argument
   // add result to the array of results for this test suite
-  var expect = function(output, expected, evaluator) {
+  var expectVerbatim = function(output, expected, evaluator) {
     var testResult = {
       suiteName: suiteName,
       expected: expected,
@@ -39,8 +48,36 @@ function getTestManager_(suiteName) {
     
     testResult.passed ? outcome.numPassed++ : outcome.numFailed++;
     outcome.testResults[outcome.testResults.length] = testResult;
+    
+    return testResult;
   };
 
+  
+  var expectString = function(output, expected) {
+    var testResult = expectVerbatim(output, expected);
+    
+    var stringDiff = function(out, ref) {
+      var oSplit, rSplit, s;
+      
+      oSplit = out.split(/([\[\] ])/);
+      rSplit = ref.split(/([\[\] ])/);
+      s = rSplit.reduce(function(acc, x, i) { 
+        if (x !== oSplit[i]) {
+          return acc + x + " <> " + oSplit[i] + "\n";
+        }
+        else {
+          return acc;
+        }
+      }, "");
+      
+      return s;
+    };
+    
+    if (!testResult.passed) {
+      testResult.summary += "\nDIFFS:\n" + stringDiff(output, expected);
+    }
+  };
+  
   var toString = function() {
     return "[ " + outcome.suiteName + " suite ] - PASSED: " + outcome.numPassed + ", FAILED: " + outcome.numFailed + "\n"
     + function() { var ri, s=''; for (ri=0; ri<outcome.testResults.length; ri++) { s+=outcome.testResults[ri].summary + '\n'; }; return s; }();
